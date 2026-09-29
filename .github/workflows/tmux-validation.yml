@@ -41,8 +41,12 @@ jobs:
         run: |
           set -euo pipefail
           test -s AGENTS.md
-          test -L GEMINI.md
-          test "$(readlink GEMINI.md)" = AGENTS.md
+          test -f CLAUDE.md
+          test ! -L CLAUDE.md
+          test -f GEMINI.md
+          test ! -L GEMINI.md
+          grep -q 'AGENTS.md' CLAUDE.md
+          grep -q 'AGENTS.md' GEMINI.md
           grep -q 'tmux' README.md
           grep -q 'Hermes harness' README.md
           grep -q 'Pi harness' README.md
