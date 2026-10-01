@@ -1,6 +1,6 @@
 # tmux cheat sheet for agent sessions
 
-Short reference for tmux. Use this sheet to run several AI agent programs in one terminal. The programs continue to run after you close the terminal.
+Teaches basic tmux commands to keep AI agents running in separate terminal sessions, even after the terminal closes.
 
 This sheet is for a person who is not a software developer. It teaches a few daily keys. It does not teach every tmux command.
 
