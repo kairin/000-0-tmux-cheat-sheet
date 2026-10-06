@@ -25,21 +25,20 @@ When all the steps are done and verified, delete this file in the same pull requ
 ## Task
 
 **T14 — 000-0-tmux-cheat-sheet** (new branch `docs/rhel10-alignment`; PR #11 is closed by the user)
-Steps: rewrite `AGENTS.md` fully: purpose (tmux cheat sheet for agent sessions), workspace note ("This repository is one folder of `~/Apps`; the layout is in `000-0-workspace/docs/workspace-layout.md`"), the writing rule (ASD-STE100), the validation workflow expectations (README must mention tmux, Hermes harness, Pi harness — read `.github/workflows/tmux-validation.yml`), the Security block from `000-0-ai/agents/AGENTS.md.template` with S1 wording. Replace the `GEMINI.md` symlink with an S3 file and add `CLAUDE.md` (S3); update `.github/workflows/tmux-validation.yml:41-50` to the checks from PR #11's diff (`test -f`, `test ! -L`, `grep -q AGENTS.md`). Verification: `bash -c 'test -s AGENTS.md && test -f CLAUDE.md && ! test -L GEMINI.md && grep -q AGENTS.md CLAUDE.md GEMINI.md'`; `grep -n '000-dotfiles\|tmux-cheat-sheet/\|ensure-workspace\|Apps/AGENTS' AGENTS.md` → nothing; CI green.
+Steps: rewrite `AGENTS.md` fully: purpose (tmux cheat sheet for agent sessions), workspace note ("This repository is one folder of `~/Apps`; the layout is in `000-0-workspace/docs/workspace-layout.md`"), the writing rule (ASD-STE100), the validation workflow expectations (README must mention tmux, Hermes harness, Pi harness — read `.github/workflows/tmux-validation.yml`), the Security block from `000-0-ai/agents/AGENTS.md.template` with S1 wording. Replace the `GEMINI.md` symlink with an S3 file and add the second vendor pointer file named in `000-0-workspace/docs/next-steps.md` (S3 text); update `.github/workflows/tmux-validation.yml:41-50` to the checks from PR #11's diff (`test -f`, `test ! -L`, `grep -q AGENTS.md`). Verification: `bash -c 'test -s AGENTS.md && ! test -L GEMINI.md && grep -q AGENTS.md GEMINI.md'`; `grep -n '000-dotfiles\|tmux-cheat-sheet/\|ensure-workspace\|Apps/AGENTS' AGENTS.md` → nothing; CI green.
 
 ## Shared text used by this task
 
 **S1. The TypeSafe sentence (replace in every `AGENTS.md` that has it).** Old (one line): `The user's local token source is \`/home/kkk/.dotfiles/.typesafe.ai/api.token\`; do not copy it into this repository, its \`.env\`/\`.envrc\`, source code, config, or documentation.` New: `The key is in the \`pass\` store as \`apps/<project folder>/typesafe/api-key\`, and a command gets it only through \`with-secret typesafe/api-key -- <command>\` (see \`~/Apps/000-0-password\`). Do not copy the key into this repository, its \`.env\`/\`.envrc\`, source code, config or documentation.` Keep the rest of the bullet.
 
-**S3. Pointer file text (CLAUDE.md and GEMINI.md, regular files):**
+**S3. Pointer file text (for the vendor pointer files, regular files):**
 ```markdown
 # Agent instructions
 
 Read [`AGENTS.md`](AGENTS.md) in this folder. It is the single source of instructions for this repository. Edit `AGENTS.md`, not this file.
 ```
-(Do not create `CLAUDE.md` in 000-0-ASD-STE100.)
 
-**S9. Commit/PR rules for every worker.** Commit on the named branch only; `git push -u origin <branch>`; open the PR with `gh pr create` if none exists, else `gh pr edit --body` to append a "Follow-up 2026-10-07" section. Every commit message ends with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`; every PR body ends with `🤖 Generated with [Claude Code](https://claude.com/claude-code)`. Never push to `main`, never merge. Docs in ASD-STE100 style: short sentences, active voice, one idea per sentence. Add a dated CHANGELOG entry where the repo has a CHANGELOG. In 000-0-ASD-STE100 never write the purge words.
+**S9. Commit/PR rules for every worker.** Commit on the named branch only; `git push -u origin <branch>`; open the PR with `gh pr create` if none exists, else `gh pr edit --body` to append a "Follow-up 2026-10-07" section. Every commit message and PR body ends with the attribution lines that the orchestrator gives you. Never push to `main`, never merge. Docs in ASD-STE100 style: short sentences, active voice, one idea per sentence. Add a dated CHANGELOG entry where the repo has a CHANGELOG. In 000-0-ASD-STE100 never write the purge words.
 
 
 ## Amendment A1 (owner decision, 2026-10-07): bash with fish-like tools
