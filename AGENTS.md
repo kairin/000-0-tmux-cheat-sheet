@@ -45,3 +45,10 @@ Set the work directory to this repository before you edit files or run git:
 ## License
 
 This sheet uses CC BY-NC-SA 4.0. See `LICENSE`.
+
+## Git identity
+
+Commit as `Mister K <678459+kairin@users.noreply.github.com>`. This is the
+public GitHub name and the GitHub noreply email. Do not commit with another
+name or with a personal email address. Check with `git config user.name` and
+`git config user.email` before you commit.
