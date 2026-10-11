@@ -19,8 +19,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if grep -RIn -i --exclude-dir=.git --exclude=tmux-validation.yml -E '(claude|anthropic)' .; then
+          if grep -RIn -i --exclude-dir=.git --exclude=tmux-validation.yml --exclude=AGENTS.md --exclude=CLAUDE.md --exclude=GEMINI.md -E '(claude|anthropic)' .; then
             echo 'Active provider-specific references found.' >&2
+            exit 1
+          fi
+          if sed 's/CLAUDE\.md//g' AGENTS.md | grep -Ein '(claude|anthropic)'; then
+            echo 'Active provider-specific guidance found in AGENTS.md.' >&2
             exit 1
           fi
 
@@ -41,8 +45,14 @@ jobs:
         run: |
           set -euo pipefail
           test -s AGENTS.md
-          test -L GEMINI.md
-          test "$(readlink GEMINI.md)" = AGENTS.md
+          test ! -L AGENTS.md
+          for pointer in CLAUDE.md GEMINI.md; do
+            test -f "$pointer"
+            test ! -L "$pointer"
+            printf '%s\n\n%s\n' \
+              'Read and follow AGENTS.md in this directory as the sole source of repository instructions.' \
+              'Make all repository instruction updates only in AGENTS.md. Keep this file solely as a pointer to AGENTS.md; do not add or duplicate instructions here, and do not replace it with a symlink.' | cmp -s - "$pointer"
+          done
           grep -q 'tmux' README.md
           grep -q 'Hermes harness' README.md
           grep -q 'Pi harness' README.md
