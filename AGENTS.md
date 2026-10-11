@@ -7,6 +7,10 @@ This repository is one folder in ~/Apps. See the workspace layout in
 
 CLAUDE.md and GEMINI.md are regular pointer files to AGENTS.md. Do not edit or replace them.
 
+## Secrets
+
+The secret rules of the workspace apply only to real secret values: a real key, token, password or credential. Documentation that tells how to make, store or use a credential is not a secret. A placeholder such as `<REDACTED>` or `PASTE-TOKEN-HERE` is not a secret. Report a secret problem only when you find a real value. Do not report placeholders or setup steps as secret problems.
+
 ## Source file
 
 This repository is the only copy of the tmux cheat sheet.
