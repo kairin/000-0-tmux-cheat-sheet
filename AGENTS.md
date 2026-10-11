@@ -1,27 +1,11 @@
 # Agent instructions
 
-## Workspace layout (read first)
+## Workspace layout
 
-This repository is one of three that must exist in `~/Apps`. An agent that reads this file must make sure all three clones are present before other work.
+This repository is one folder in ~/Apps. See the workspace layout in
+~/Apps/000-0-workspace/docs/workspace-layout.md.
 
-| Path | Remote |
-|---|---|
-| `~/Apps/000-dotfiles` | `https://github.com/kairin/000-dotfiles.git` |
-| `~/Apps/ASD-STE100` | `https://github.com/kairin/ASD-STE100.git` |
-| `~/Apps/tmux-cheat-sheet` | `https://github.com/kairin/tmux-cheat-sheet.git` |
-
-`~/Apps` is a workspace directory. It is not a git repository.
-
-Before any other work:
-
-1. Make sure each path exists and is a git clone.
-2. If a path does not exist, clone it from the remote in the table.
-3. If `~/Apps/000-dotfiles` exists, run `~/Apps/000-dotfiles/scripts/ensure-workspace-layout.sh`.
-4. If `000-dotfiles` does not exist, clone it first. Then run the command.
-
-The script creates `~/Apps/AGENTS.md` and `~/Apps/GEMINI.md` as symlinks to `~/Apps/000-dotfiles/AGENTS.md`.
-
-`GEMINI.md` in this repository is a compatibility symlink to this file.
+CLAUDE.md and GEMINI.md are regular pointer files to AGENTS.md. Do not edit or replace them.
 
 ## Source file
 
