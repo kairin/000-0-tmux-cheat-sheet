@@ -212,7 +212,7 @@ The license applies to this sheet. It does not apply to programs that you write 
 
 ## Core repository sync
 
-Updater `1.0.001` in `000-0-ai` first syncs all nine core repositories with
+Updater `1.0.002` in `000-0-ai` first syncs all nine core repositories with
 remote `main`. It saves staged, unstaged and untracked work locally, advances
 `main` only by fast-forward, then restores the original branch and local work
 before it starts the next repository. Ignored files stay in place. Recovery
@@ -227,3 +227,37 @@ applications. `--only` limits apps, not core sync. `--version` and
 
 The release sequence is `1.0.001` through `1.0.999`, then `1.1.0`.
 See the [shared update procedure](../000-0-ai/README.md#update-command).
+
+## Update startup and automatic calls
+
+Run `update` as your normal user for routine maintenance. It calls the doctor
+and installer automatically when needed.
+
+```mermaid
+flowchart TD
+    A["update · 000-0-ai"] --> B["Sync nine core repos and restore local work"]
+    B --> C["Check published updater and restart if newer"]
+    C --> D["Check required dev tools · 000-0-dotfiles"]
+    D --> E["Repair missing or broken tools, then check again"]
+    E --> F["Update selected AI tools, Bash tools and Ghostty"]
+```
+
+This diagram shows the successful path. A failed sync, release check or tool
+repair stops the process before app updates. Healthy tools need no repair.
+
+| Need | Command |
+|---|---|
+| Routine maintenance | `update` |
+| Read-only tool check | `dev-doctor` |
+| Show a repair plan | `dev-install` |
+| Apply repairs | `dev-install --apply` |
+
+Only system-package repairs through DNF need sudo. If needed, run `sudo -v`
+first. Repairs use `sudo -n` and fail if authorization expires.
+Never run `sudo update`. User-owned binary and Ruff repairs need no sudo.
+
+`000-0-ai` owns the updater. `000-0-dotfiles` owns the doctor, installer and
+catalog. `000-0-workspace` owns the
+[full procedure](../000-0-workspace/docs/update-and-development-tools.md),
+including first setup, failure paths, preview limits and the ownership table.
+See [dotfiles](../000-0-dotfiles/README.md#development-tools) for tool details.

@@ -60,3 +60,17 @@ It must restore staged, unstaged and untracked work and the original branch.
 It retains recovery snapshots and blocks later stages if restoration fails.
 This routine does not commit or push unfinished work. See the exception in
 `../000-0-workspace/docs/repository-protection.md`.
+
+## Development tool ownership and startup
+
+Use `../000-0-workspace/docs/update-and-development-tools.md` for the procedure.
+`000-0-ai` owns `update`. `000-0-dotfiles` owns the non-AI doctor, installer and
+catalog. This new system does not restore the retired dotfiles engine.
+
+Run `update` as the owner. It syncs core repos, checks its published release,
+then calls the doctor and repairs missing or broken required tools.
+Do not repeat those calls manually during routine updates.
+Do not reinstall healthy tools or reinstall for PATH or authentication problems.
+Incomplete checks or repairs block app updates. The local quality checker never installs tools.
+Only DNF repairs use `sudo -n`. Use `sudo -v` first when needed.
+If authorization expires, report the failure. Never run `sudo update`.

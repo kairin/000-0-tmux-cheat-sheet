@@ -1,3 +1,8 @@
+## 2026-10-15: Development tool checks
+
+- Document dotfiles ownership, automatic tool repair, startup commands and sudo rules.
+- Link the full workspace procedure and include the process diagram.
+
 ## 2026-10-15: Updater 1.0.001
 
 - Documented core sync with local work preservation, published-release refresh,
