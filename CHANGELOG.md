@@ -1,3 +1,9 @@
+## 2026-10-15: Adversarial update review
+
+- Clarify that `tmux -V` proves CLI startup, not session or configuration
+  behavior.
+- Record the corrected version probe as a resolved development issue.
+
 ## 2026-10-15: Development tool checks
 
 - Document dotfiles ownership, automatic tool repair, startup commands and sudo rules.
