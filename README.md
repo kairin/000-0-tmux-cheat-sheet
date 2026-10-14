@@ -209,3 +209,21 @@ The license applies to this sheet. It does not apply to programs that you write 
 |---|---|
 | 2026-09-12 | Change the license from MIT to CC BY-NC-SA 4.0. |
 | 2026-09-12 | Update the preferred-agent examples and public attribution. |
+
+## Core repository sync
+
+Updater `1.0.001` in `000-0-ai` first syncs all nine core repositories with
+remote `main`. It saves staged, unstaged and untracked work locally, advances
+`main` only by fast-forward, then restores the original branch and local work
+before it starts the next repository. Ignored files stay in place. Recovery
+snapshots remain available. Incomplete sync or restoration blocks updater
+replacement and application updates. Routine sync does not commit or push
+unfinished work.
+
+After restoration, the command checks the published updater release and
+installs newer code only from that exact tag. It restarts once, then updates
+applications. `--only` limits apps, not core sync. `--version` and
+`--check-self` stay local. `--dry-run` makes no changes.
+
+The release sequence is `1.0.001` through `1.0.999`, then `1.1.0`.
+See the [shared update procedure](../000-0-ai/README.md#update-command).

@@ -1,3 +1,8 @@
+## 2026-10-15: Updater 1.0.001
+
+- Documented core sync with local work preservation, published-release refresh,
+  and the owner version sequence through patch 999.
+
 ## 2026-10-11 Website artifact intent
 
 - Added docs/website-artifact-intent.md with the current implementation, adoption tasks, source authority and acceptance checks.
