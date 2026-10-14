@@ -74,3 +74,10 @@ Do not reinstall healthy tools or reinstall for PATH or authentication problems.
 Incomplete checks or repairs block app updates. The local quality checker never installs tools.
 Only DNF repairs use `sudo -n`. Use `sudo -v` first when needed.
 If authorization expires, report the failure. Never run `sudo update`.
+
+## Workflow review follow-up
+
+`tmux -V` is the development-tool smoke probe. Do not use it as evidence that
+a server, session, configuration or key binding works. Keep those checks in
+this repository's user workflow. The unsupported generic probe was fixed
+before the development-tools release and has a regression test.

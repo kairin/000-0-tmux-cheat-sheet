@@ -261,3 +261,13 @@ catalog. `000-0-workspace` owns the
 [full procedure](../000-0-workspace/docs/update-and-development-tools.md),
 including first setup, failure paths, preview limits and the ownership table.
 See [dotfiles](../000-0-dotfiles/README.md#development-tools) for tool details.
+
+## Workflow review — 2026-10-15
+
+The doctor now uses the supported `tmux -V` probe; the earlier generic probe
+was corrected before release and has a regression test. This check proves that
+the tmux CLI starts and reports a version. It does not validate a running
+server, session behavior, configuration loading or key bindings.
+
+Use the checks in this cheat sheet for those user-facing behaviors. See the
+owner's [adversarial workflow review](../000-0-workspace/docs/update-workflow-review-2026-10-15.md).
