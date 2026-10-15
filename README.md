@@ -271,3 +271,11 @@ server, session behavior, configuration loading or key bindings.
 
 Use the checks in this cheat sheet for those user-facing behaviors. See the
 owner's [adversarial workflow review](../000-0-workspace/docs/update-workflow-review-2026-10-15.md).
+
+## Office toolset and Node.js policy (2026-10-15)
+
+The office `tmux -V` check passed with the installed development-tool commands.
+This check did not test a tmux server, session or key binding.
+The shared Node.js LTS policy does not change tmux package selection.
+
+See the [office installation record and shared version policy](../000-0-workspace/docs/office-toolset-2026-10-15.md).
