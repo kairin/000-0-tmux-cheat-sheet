@@ -2,6 +2,15 @@
 
 Teaches basic tmux commands to keep AI agents running in separate terminal sessions, even after the terminal closes.
 
+```mermaid
+flowchart TD
+    A["Terminal"] --> B["Attach to named tmux session"]
+    B --> C["One window per agent"]
+    C --> D["Optional panes for related views"]
+    B --> E["Detach and keep programs running"]
+    E --> B
+```
+
 This sheet is for a person who is not a software developer. It teaches a few daily keys. It does not teach every tmux command.
 
 ## What tmux does
