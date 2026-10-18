@@ -7,9 +7,17 @@ This repository is one folder in ~/Apps. See the workspace layout in
 
 CLAUDE.md and GEMINI.md are regular pointer files to AGENTS.md. Do not edit or replace them.
 
-## Secrets
+## Shared workspace policy
 
-The secret rules of the workspace apply only to real secret values: a real key, token, password or credential. Documentation that tells how to make, store or use a credential is not a secret. A placeholder such as `<REDACTED>` or `PASTE-TOKEN-HERE` is not a secret. Report a secret problem only when you find a real value. Do not report placeholders or setup steps as secret problems.
+Read `~/Apps/000-0-workspace/docs/repository-protection.md` for delivery,
+branches, external isolated worktrees, visibility, Git identity, and secrets. Read
+`~/Apps/000-0-workspace/docs/agent-instruction-files.md` for pointer rules,
+policy routing, owner decisions, unchecked claims, and shared conduct. Read
+`~/Apps/000-0-workspace/docs/project-quality-checks.md` for the local baseline
+and verification. Read `~/Apps/000-0-workspace/docs/update-and-development-tools.md`
+before maintenance work, including retired-boundary rules. These references are
+instructions to read. If required policy is missing, the affected task is
+incomplete; do not clone, install, or reconstruct it.
 
 ## Source file
 
@@ -33,47 +41,6 @@ Set the work directory to this repository before you edit files or run git:
 ## License
 
 This sheet uses CC BY-NC-SA 4.0. See `LICENSE`.
-
-## Owner decisions and unchecked claims
-
-- The owner's stated decision beats a general rule. Before you flag
-  something, check whether the owner already decided on it (repository
-  docs, AGENTS.md, earlier instructions). If they did, do not flag it again.
-- Check a claim yourself before acting on it, above all a claim from an
-  earlier session, a subagent or a report. Look at the file, image or data.
-- Do only what was asked. Do not add new "outstanding issues" to a task, and
-  do not raise again one the owner dismissed.
-- Never propose deleting, purging or unpublishing anything because of a claim
-  you have not checked yourself.
-
-## Git identity
-
-Commit as `Mister K <678459+kairin@users.noreply.github.com>`. This is the
-public GitHub name and the GitHub noreply email. Do not commit with another
-name or with a personal email address. Check with `git config user.name` and
-`git config user.email` before you commit.
-
-## Routine core sync
-
-The updater in `000-0-ai` syncs all nine core repos before release/app checks.
-It must restore staged, unstaged and untracked work and the original branch.
-It retains recovery snapshots and blocks later stages if restoration fails.
-This routine does not commit or push unfinished work. See the exception in
-`../000-0-workspace/docs/repository-protection.md`.
-
-## Development tool ownership and startup
-
-Use `../000-0-workspace/docs/update-and-development-tools.md` for the procedure.
-`000-0-ai` owns `update`. `000-0-dotfiles` owns the non-AI doctor, installer and
-catalog. This new system does not restore the retired dotfiles engine.
-
-Run `update` as the owner. It syncs core repos, checks its published release,
-then calls the doctor and repairs missing or broken required tools.
-Do not repeat those calls manually during routine updates.
-Do not reinstall healthy tools or reinstall for PATH or authentication problems.
-Incomplete checks or repairs block app updates. The local quality checker never installs tools.
-Only DNF repairs use `sudo -n`. Use `sudo -v` first when needed.
-If authorization expires, report the failure. Never run `sudo update`.
 
 ## Workflow review follow-up
 
