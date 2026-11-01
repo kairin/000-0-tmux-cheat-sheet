@@ -1,3 +1,8 @@
+## 2026-10-31: Update guidance links
+
+- Replace the copied update flow with links to the shared procedure and the current handover.
+- Mark the 2026-10-15 workflow note as historical.
+
 ## 2026-10-15: Office toolset and Node.js LTS policy
 
 ## 2026-10-18: Shared instruction references
