@@ -288,7 +288,7 @@ the tmux CLI starts and reports a version. It does not validate a running
 server, session behavior, configuration loading or key bindings.
 
 Use the checks in this cheat sheet for those user-facing behaviors. The
-[dated workspace review](../000-0-workspace/docs/update-workflow-review-2026-10-15.md)
+[dated workspace review](https://github.com/kairin/000-0-workspace/blob/86d01c4b3db6edffbaa92a426b117fd30d6cee3e/docs/update-workflow-review-2026-10-15.md)
 holds the earlier evidence. The handover above holds the current proposed work.
 
 ## Office toolset and Node.js policy (2026-10-15)
