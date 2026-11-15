@@ -8,12 +8,12 @@
 - Replace the copied update flow with links to the shared procedure and the current handover.
 - Mark the 2026-10-15 workflow note as historical.
 
-## 2026-10-15: Office toolset and Node.js LTS policy
-
 ## 2026-10-18: Shared instruction references
 
 - Link shared workspace rules instead of repeating them in repository guides.
 - Keep local commands, checks, and README diagrams.
+
+## 2026-10-15: Office toolset and Node.js LTS policy
 
 - Record the office installation checks and their limits.
 - Link the shared Node.js LTS target and the remaining rollout work.

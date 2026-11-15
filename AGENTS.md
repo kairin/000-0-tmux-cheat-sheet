@@ -35,7 +35,7 @@ Do not copy the sheet into `~/Apps`.
 Set the work directory to this repository before you edit files or run git:
 
 ```text
-~/Apps/tmux-cheat-sheet
+~/Apps/000-0-tmux-cheat-sheet
 ```
 
 ## License
